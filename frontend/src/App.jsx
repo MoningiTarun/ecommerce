@@ -2,27 +2,24 @@ import { useState } from 'react'
 import './App.css'
 import Login from './components/Login';
 import Signup from './components/Signup';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';  // ⬅️ Remove BrowserRouter here
 import HomePage from './components/HomePage';
 import AboutUs from './components/AboutUs';
 import Computers from './components/Computers';
 import Mobiles from './components/Mobiles';
 import Laptops from './components/Laptops';
 import Pendrives from './components/Pendrives';
-import Home from './components/Home'
-import ProductPage from './components/ProductPage'
+import Home from './components/Home';
+import ProductPage from './components/ProductPage';
 import Cart from './components/Cart';
 import Payment from './components/Payment';
 import Orders from './components/Orders';
 
-
-
 function App() {
-  const [count, setCount] = useState(0)
-  
+  const [count, setCount] = useState(0);
+
   return (
     <>
-    <Router>
       <Routes>
         <Route path="/" element={<HomePage />}>
           <Route index element={<AboutUs />} />
@@ -40,9 +37,8 @@ function App() {
           <Route path="orders" element={<Orders />} />
         </Route>
       </Routes>
-    </Router>
     </>
-  )
+  );
 }
 
-export default App
+export default App;
